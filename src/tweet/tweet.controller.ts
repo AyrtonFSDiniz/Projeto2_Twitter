@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { TweetService } from './tweet.service';
 import { CreateTweetDto } from './dto/create-tweet.dto';
@@ -9,26 +10,26 @@ export class TweetController {
 
   @Post()
   create(@Body() createTweetDto: CreateTweetDto) {
-    return this.tweetService.create(createTweetDto);
+    return this.tweetService.createPrisma(createTweetDto);
   }
 
   @Get()
   findAll() {
-    return this.tweetService.findAll();
+    return this.tweetService.findAllPrisma();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tweetService.findOne(+id);
+    return this.tweetService.findOnePrisma(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTweetDto: UpdateTweetDto) {
-    return this.tweetService.update(+id, updateTweetDto);
+    return this.tweetService.updateOnePrisma(+id, updateTweetDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tweetService.remove(+id);
+    return this.tweetService.removeOnePrisma(+id);
   }
 }
