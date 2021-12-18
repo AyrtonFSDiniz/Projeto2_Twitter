@@ -15,7 +15,7 @@ export class UsuarioController {
 
   @Get()
   findAll() {
-    return this.usuarioService.findAllOPrisma();
+    return this.usuarioService.findAllPrisma();
   }
 
   @Get(':id')
