@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Controller,
   Get,
@@ -8,38 +9,38 @@ import {
   Delete,
 } from '@nestjs/common';
 import { SeguidoresService } from './seguidores.service';
-import { CreateSeguidoreDto } from './dto/create-seguidore.dto';
-import { UpdateSeguidoreDto } from './dto/update-seguidore.dto';
+import { CreateSeguidoresDto } from './dto/create-seguidores.dto';
+import { UpdateSeguidoresDto } from './dto/update-seguidores.dto';
 
 @Controller('seguidores')
 export class SeguidoresController {
   constructor(private readonly seguidoresService: SeguidoresService) {}
 
   @Post()
-  create(@Body() createSeguidoreDto: CreateSeguidoreDto) {
-    return this.seguidoresService.create(createSeguidoreDto);
+  create(@Body() createSeguidoresDto: CreateSeguidoresDto) {
+    return this.seguidoresService.createPrisma(createSeguidoresDto);
   }
 
   @Get()
   findAll() {
-    return this.seguidoresService.findAll();
+    return this.seguidoresService.findAllPrisma();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.seguidoresService.findOne(+id);
+    return this.seguidoresService.findOnePrisma(+id);
   }
 
   @Patch(':id')
   update(
     @Param('id') id: string,
-    @Body() updateSeguidoreDto: UpdateSeguidoreDto,
+    @Body() updateSeguidoresDto: UpdateSeguidoresDto,
   ) {
-    return this.seguidoresService.update(+id, updateSeguidoreDto);
+    return this.seguidoresService.updateOnePrisma(+id, updateSeguidoresDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.seguidoresService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.seguidoresService.removeOnePrisma(id);
   }
 }
