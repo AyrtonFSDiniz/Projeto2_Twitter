@@ -13,12 +13,14 @@ datasource db {
 model Seguidores {
   id            Int       @default(autoincrement()) @id
   idSeguidor    Int
+  usuarios Usuario []
 
 }
 
 model Seguindo {
   id Int @default(autoincrement()) @id
   idSeguindo Int
+  usuarios Usuario []
 }
 
 model Tweet {
@@ -27,6 +29,7 @@ model Tweet {
   emoji         String
   curtidas      Int
   data_postagem String
+  usuarios Usuario []
 }
 
 model Usuario {
