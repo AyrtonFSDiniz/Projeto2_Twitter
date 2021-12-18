@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { SeguindoService } from './seguindo.service';
 import { CreateSeguindoDto } from './dto/create-seguindo.dto';
@@ -9,26 +10,26 @@ export class SeguindoController {
 
   @Post()
   create(@Body() createSeguindoDto: CreateSeguindoDto) {
-    return this.seguindoService.create(createSeguindoDto);
+    return this.seguindoService.createPrisma(createSeguindoDto);
   }
 
   @Get()
   findAll() {
-    return this.seguindoService.findAll();
+    return this.seguindoService.findAllPrisma();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.seguindoService.findOne(+id);
+    return this.seguindoService.findOnePrisma(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSeguindoDto: UpdateSeguindoDto) {
-    return this.seguindoService.update(+id, updateSeguindoDto);
+    return this.seguindoService.updateOnePrisma(+id, updateSeguindoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.seguindoService.remove(+id);
+    return this.seguindoService.removePrisma(+id);
   }
 }

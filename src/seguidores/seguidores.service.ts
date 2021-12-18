@@ -15,7 +15,7 @@ export class SeguidoresService {
     });
   }
 
-  async findAllPrisma(): Promise<Seguidores> {
+  async findAllPrisma(): Promise<Seguidores[]> {
     return await this.prisma.seguidores.findMany();
   }
 
