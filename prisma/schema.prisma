@@ -43,4 +43,6 @@ model Usuario {
   criado_em String
   modificado_em String
   tweet Tweet[] @relation(references: [id])
+  email String
+  senha String
 }
