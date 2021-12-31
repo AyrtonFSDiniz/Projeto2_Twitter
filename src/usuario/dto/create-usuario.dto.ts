@@ -38,4 +38,12 @@ export class CreateUsuarioDto {
   @IsNotEmpty()
   @IsNumber()
   tweetid: number;
+
+  @IsNotEmpty()
+  @IsString()
+  email: string;
+
+  @IsNotEmpty()
+  @IsString()
+  senha: string;
 }
