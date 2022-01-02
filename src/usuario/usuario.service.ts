@@ -31,7 +31,7 @@ export class UsuarioService {
     }
   
   
-    const senhaIgual = await bcrypt.compare(login.senha, user.senha) //comparando a senha que foi passada, co ma senha que temos no banco
+    const senhaIgual = await bcrypt.compare(login.senha, user.senha) //comparando a senha que foi passada, com a senha que temos no banco
   
     if(!senhaIgual){
       throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
