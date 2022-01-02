@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import {PrismaService } from '../prisma/prisma.service';
 import { Usuario, Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt'
+import { JwtPayload } from 'src/auth/jwt.strategy';
+import { LoginDto } from 'src/auth/dto/login.dto';
 
 @Injectable()
 export class UsuarioService {
@@ -17,7 +18,7 @@ export class UsuarioService {
     return await this.prisma.usuario.create({ data });
   }
 
-  async findByLogin(login: CreateUsuarioDto): Promise<Usuario> { 
+  async findByLogin(login: LoginDto): Promise<Usuario> { 
     const user = await this.prisma.usuario.findFirst({ //comunicação com o banco que traz o usuario
       where: { 
         email: login.email, //vai trazer o primeiro email que bater com o email que o cara passou, por causa do findFirst
@@ -38,6 +39,20 @@ export class UsuarioService {
   
     return user; //se passou por todas as validações, então tá ok. Aí eu vou devolver esse usuário
   }
+
+  async validateUser(payload: JwtPayload): Promise<Usuario> {
+		const user = await this.prisma.usuario.findFirst({
+			where: {
+				email: payload.email,
+			}
+		});
+    
+		if(!user){
+			throw new HttpException('', HttpStatus.UNAUTHORIZED);
+		}
+
+		return user;
+	}
 
   //Retornando a lista de usuários
   async findAllPrisma(): Promise<Usuario[]> {

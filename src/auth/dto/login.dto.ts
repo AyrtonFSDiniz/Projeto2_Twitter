@@ -1,4 +1,7 @@
 /* eslint-disable prettier/prettier */
+import { IsNotEmpty, IsString } from "class-validator";
+
+/* eslint-disable prettier/prettier */
 export class LoginDto {
     @IsNotEmpty()
     @IsString()
@@ -17,14 +20,6 @@ export class LoginDto {
     nascimento: string;
   
     @IsNotEmpty()
-    @IsNumber()
-    seguidoresid: number;
-  
-    @IsNotEmpty()
-    @IsNumber()
-    seguindoid: number;
-  
-    @IsNotEmpty()
     @IsString()
     criado_em: string;
   
@@ -33,14 +28,10 @@ export class LoginDto {
     modificado_em: string;
   
     @IsNotEmpty()
-    @IsNumber()
-    tweetid: number;
-  
-    @IsNotEmpty()
     @IsString()
     email: string;
   
     @IsNotEmpty()
     @IsString()
     senha: string;
-  }
+}
