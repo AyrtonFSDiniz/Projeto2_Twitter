@@ -2,7 +2,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTweetDto } from './dto/create-tweet.dto';
 import { UpdateTweetDto } from './dto/update-tweet.dto';
-import { PrismaService } from '..prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { Tweet } from '@prisma/client';
 
 @Injectable()
