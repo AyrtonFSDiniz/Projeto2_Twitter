@@ -2,6 +2,10 @@
 import { IsInt, IsNotEmpty, IsString } from "class-validator";
 
 export class CreateTweetDto {
+  @IsInt()
+  @IsNotEmpty()
+  usuarioId: number;
+
   @IsNotEmpty()
   @IsString()
   texto: string;

@@ -20,26 +20,6 @@ export class CreateUsuarioDto {
   nascimento: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  seguidoresid: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  seguindoid: number;
-
-  @IsNotEmpty()
-  @IsString()
-  criado_em: string;
-
-  @IsNotEmpty()
-  @IsString()
-  modificado_em: string;
-
-  @IsNotEmpty()
-  @IsNumber()
-  tweetid: number;
-
-  @IsNotEmpty()
   @IsString()
   email: string;
 
