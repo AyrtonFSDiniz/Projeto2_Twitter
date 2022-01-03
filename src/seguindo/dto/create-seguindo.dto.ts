@@ -2,9 +2,9 @@
 import { IsInt, IsNotEmpty } from "class-validator";
 
 export class CreateSeguindoDto {
-    @IsInt()
     @IsNotEmpty()
-    usuarioId: number;
+    @IsInt()
+    usuarioid: number;
 
     @IsNotEmpty()
     @IsInt()
