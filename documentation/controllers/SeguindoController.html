@@ -28,18 +28,16 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content controller">
                    <div class="content-data">
 
 
 
 
 
-
-
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >SeguidoresService</li>
+  <li>Controllers</li>
+  <li >SeguindoController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,8 +55,16 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/seguidores/seguidores.service.ts</code>
+            <code>src/seguindo/seguindo.controller.ts</code>
         </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>seguindo</code>
+            </p>
+
 
 
 
@@ -78,24 +84,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#createPrisma" >createPrisma</a>
+                                <a href="#create" >create</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#findAllPrisma" >findAllPrisma</a>
+                                <a href="#findAll" >findAll</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#findOnePrisma" >findOnePrisma</a>
+                                <a href="#findOne" >findOne</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#removeOnePrisma" >removeOnePrisma</a>
+                                <a href="#remove" >remove</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#updateOnePrisma" >updateOnePrisma</a>
+                                <a href="#update" >update</a>
                             </li>
                         </ul>
                     </td>
@@ -110,55 +111,6 @@
 </section>
 
             <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(prisma: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/seguidores/seguidores.service.ts:9</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>prisma</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-            <section>
     
     <h3 id="methods">
         Methods
@@ -167,26 +119,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createPrisma"></a>
+                    <a name="create"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>createPrisma</b></span>
-                        <a href="#createPrisma"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createPrisma(createSeguidoresDto: <a href="../classes/CreateSeguidoresDto.html" target="_self">CreateSeguidoresDto</a>)</code>
+<code>create(createSeguindoDto: <a href="../classes/CreateSeguindoDto.html" target="_self">CreateSeguindoDto</a>)</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post()<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:12</a></div>
+                            class="link-to-prism">src/seguindo/seguindo.controller.ts:12</a></div>
                 </td>
             </tr>
 
@@ -207,9 +164,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>createSeguidoresDto</td>
+                                    <td>createSeguindoDto</td>
                                     <td>
-                                                <code><a href="../classes/CreateSeguidoresDto.html" target="_self" >CreateSeguidoresDto</a></code>
+                                                <code><a href="../classes/CreateSeguindoDto.html" target="_self" >CreateSeguindoDto</a></code>
                                     </td>
 
                                     <td>
@@ -224,7 +181,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Seguidore.html" target="_self" >Promise&lt;Seguidores&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -238,26 +195,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="findAllPrisma"></a>
+                    <a name="findAll"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>findAllPrisma</b></span>
-                        <a href="#findAllPrisma"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>findAll</b></span>
+                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findAllPrisma()</code>
+<code>findAll()</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get()<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/seguindo/seguindo.controller.ts:17</a></div>
                 </td>
             </tr>
 
@@ -266,7 +228,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Seguidore.html" target="_self" >Promise&lt;Seguidores[]&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -277,26 +239,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="findOnePrisma"></a>
+                    <a name="findOne"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>findOnePrisma</b></span>
-                        <a href="#findOnePrisma"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findOnePrisma(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:22</a></div>
+                            class="link-to-prism">src/seguindo/seguindo.controller.ts:22</a></div>
                 </td>
             </tr>
 
@@ -319,7 +286,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -334,7 +301,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Seguidore.html" target="_self" >Promise&lt;Seguidores&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -348,26 +315,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeOnePrisma"></a>
+                    <a name="remove"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>removeOnePrisma</b></span>
-                        <a href="#removeOnePrisma"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>removeOnePrisma(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Delete(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/seguindo/seguindo.controller.ts:32</a></div>
                 </td>
             </tr>
 
@@ -390,7 +362,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -405,7 +377,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -419,26 +391,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateOnePrisma"></a>
+                    <a name="update"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>updateOnePrisma</b></span>
-                        <a href="#updateOnePrisma"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateOnePrisma(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updateSeguidoresDto: <a href="../classes/UpdateSeguidoresDto.html" target="_self">UpdateSeguidoresDto</a>)</code>
+<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateSeguindoDto: <a href="../classes/UpdateSeguindoDto.html" target="_self">UpdateSeguindoDto</a>)</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Patch(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/seguindo/seguindo.controller.ts:27</a></div>
                 </td>
             </tr>
 
@@ -461,7 +438,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -471,9 +448,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>updateSeguidoresDto</td>
+                                    <td>updateSeguindoDto</td>
                                     <td>
-                                                <code><a href="../classes/UpdateSeguidoresDto.html" target="_self" >UpdateSeguidoresDto</a></code>
+                                                <code><a href="../classes/UpdateSeguindoDto.html" target="_self" >UpdateSeguindoDto</a></code>
                                     </td>
 
                                     <td>
@@ -488,7 +465,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -498,55 +475,50 @@
             </tr>
         </tbody>
     </table>
-</section>
-
-    </div>
+</section>    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
-import { CreateSeguidoresDto } from &#x27;./dto/create-seguidores.dto&#x27;;
-import { UpdateSeguidoresDto } from &#x27;./dto/update-seguidores.dto&#x27;;
-import { PrismaService } from &#x27;../prisma/prisma.service&#x27;;
-import { Seguidores } from &#x27;.prisma/client&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/* eslint-disable prettier/prettier */
+import { Controller, Get, Post, Body, Patch, Param, Delete } from &#x27;@nestjs/common&#x27;;
+import { SeguindoService } from &#x27;./seguindo.service&#x27;;
+import { CreateSeguindoDto } from &#x27;./dto/create-seguindo.dto&#x27;;
+import { UpdateSeguindoDto } from &#x27;./dto/update-seguindo.dto&#x27;;
 
-@Injectable()
-export class SeguidoresService {
-  constructor(private readonly prisma: PrismaService) {}
+@Controller(&#x27;seguindo&#x27;)
+export class SeguindoController {
+  constructor(private readonly seguindoService: SeguindoService) {}
 
-  async createPrisma(createSeguidoresDto: CreateSeguidoresDto): Promise&lt;Seguidores&gt; {
-    return await this.prisma.seguidores.create({ 
-      data: { ...createSeguidoresDto} 
-    });
+  @Post()
+  create(@Body() createSeguindoDto: CreateSeguindoDto) {
+    return this.seguindoService.createPrisma(createSeguindoDto);
   }
 
-  async findAllPrisma(): Promise&lt;Seguidores[]&gt; {
-    return await this.prisma.seguidores.findMany();
+  @Get()
+  findAll() {
+    return this.seguindoService.findAllPrisma();
   }
 
-  async findOnePrisma(id: number): Promise&lt;Seguidores&gt; {
-    return await this.prisma.seguidores.findUnique({ 
-      where: { id },
-    });
+  @Get(&#x27;:id&#x27;)
+  findOne(@Param(&#x27;id&#x27;) id: string) {
+    return this.seguindoService.findOnePrisma(+id);
   }
 
-  async updateOnePrisma(id: number, updateSeguidoresDto: UpdateSeguidoresDto) {
-    return await this.prisma.seguidores.update({ 
-      data: { ...updateSeguidoresDto},
-      where: { id }, 
-    });
+  @Patch(&#x27;:id&#x27;)
+  update(@Param(&#x27;id&#x27;) id: string, @Body() updateSeguindoDto: UpdateSeguindoDto) {
+    return this.seguindoService.updateOnePrisma(+id, updateSeguindoDto);
   }
 
-  async removeOnePrisma(id: number) {
-    return await this.prisma.seguidores.delete({
-      where: { id },
-    });
+  @Delete(&#x27;:id&#x27;)
+  remove(@Param(&#x27;id&#x27;) id: string) {
+    return this.seguindoService.removePrisma(+id);
   }
 }
 </code></pre>
     </div>
-
 </div>
+
+
 
 
 
@@ -584,8 +556,8 @@ export class SeguidoresService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'SeguidoresService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'SeguindoController.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

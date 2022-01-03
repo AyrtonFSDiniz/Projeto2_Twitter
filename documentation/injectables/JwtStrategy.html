@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >AppService</li>
+  <li >JwtStrategy</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app.service.ts</code>
+            <code>src/auth/jwt.strategy.ts</code>
         </p>
 
 
@@ -78,7 +78,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getHello" >getHello</a>
+                                <a href="#validate" >validate</a>
                             </li>
                         </ul>
                     </td>
@@ -92,6 +92,24 @@
     </table>
 </section>
 
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/auth/jwt.strategy.ts:11</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
 
             <section>
     
@@ -102,24 +120,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getHello"></a>
+                    <a name="validate"></a>
                     <span class="name">
-                        <span ><b>getHello</b></span>
-                        <a href="#getHello"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>validate</b></span>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getHello()</code>
+<code>validate(payload: <a href="../interfaces/JwtPayload.html" target="_self">JwtPayload</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="6"
-                            class="link-to-prism">src/app.service.ts:6</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/auth/jwt.strategy.ts:18</a></div>
                 </td>
             </tr>
 
@@ -128,8 +146,40 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>payload</td>
+                                    <td>
+                                                <code><a href="../interfaces/JwtPayload.html" target="_self" >JwtPayload</a></code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/JwtPayload.html" target="_self" >JwtPayload</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -142,14 +192,25 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { PassportStrategy } from &#x27;@nestjs/passport&#x27;;
+import { ExtractJwt, Strategy } from &#x27;passport-jwt&#x27;;
+
+export interface JwtPayload{
+	email: string;
+}
 
 @Injectable()
-export class AppService {
-  getHello(): string {
-    return &#x27;Bem Vindo ao Twitter&#x27;;
-  }
-}
-</code></pre>
+export class JwtStrategy extends PassportStrategy(Strategy) { 
+	constructor() {
+		super({ 
+			jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), 
+			secretOrKey: process.env.SECRETKEY, 
+		})
+	}
+	validate(payload: JwtPayload){
+		return payload;
+	}
+}</code></pre>
     </div>
 
 </div>
@@ -191,7 +252,7 @@ export class AppService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'JwtStrategy.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

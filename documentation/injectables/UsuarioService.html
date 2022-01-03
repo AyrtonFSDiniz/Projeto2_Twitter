@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >SeguidoresService</li>
+  <li >UsuarioService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/seguidores/seguidores.service.ts</code>
+            <code>src/usuario/usuario.service.ts</code>
         </p>
 
 
@@ -87,6 +87,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#findByLogin" >findByLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#findOnePrisma" >findOnePrisma</a>
                             </li>
                             <li>
@@ -96,6 +100,10 @@
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#updateOnePrisma" >updateOnePrisma</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#validateUser" >validateUser</a>
                             </li>
                         </ul>
                     </td>
@@ -120,7 +128,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/seguidores/seguidores.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/usuario/usuario.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -178,15 +186,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createPrisma(createSeguidoresDto: <a href="../classes/CreateSeguidoresDto.html" target="_self">CreateSeguidoresDto</a>)</code>
+                    <code>createPrisma(data: <a href="../classes/Usuario.html" target="_self">Prisma.UsuarioCreateInput</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/usuario/usuario.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -207,9 +215,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>createSeguidoresDto</td>
+                                    <td>data</td>
                                     <td>
-                                                <code><a href="../classes/CreateSeguidoresDto.html" target="_self" >CreateSeguidoresDto</a></code>
+                                                <code><a href="../classes/Usuario.html" target="_self" >Prisma.UsuarioCreateInput</a></code>
                                     </td>
 
                                     <td>
@@ -224,7 +232,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Seguidore.html" target="_self" >Promise&lt;Seguidores&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Usuario.html" target="_self" >Promise&lt;Usuario&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -256,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/usuario/usuario.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -266,8 +274,79 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Seguidore.html" target="_self" >Promise&lt;Seguidores[]&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Usuario.html" target="_self" >Promise&lt;Usuario[]&gt;</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findByLogin"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>findByLogin</b></span>
+                        <a href="#findByLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findByLogin(login: <a href="../classes/LoginDto.html" target="_self">LoginDto</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/usuario/usuario.service.ts:21</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>login</td>
+                                    <td>
+                                                <code><a href="../classes/LoginDto.html" target="_self" >LoginDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Usuario.html" target="_self" >Promise&lt;Usuario&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -295,8 +374,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/usuario/usuario.service.ts:63</a></div>
                 </td>
             </tr>
 
@@ -334,7 +413,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Seguidore.html" target="_self" >Promise&lt;Seguidores&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Usuario.html" target="_self" >Promise&lt;Usuario&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -366,8 +445,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/usuario/usuario.service.ts:81</a></div>
                 </td>
             </tr>
 
@@ -430,15 +509,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateOnePrisma(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updateSeguidoresDto: <a href="../classes/UpdateSeguidoresDto.html" target="_self">UpdateSeguidoresDto</a>)</code>
+                    <code>updateOnePrisma(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updateUsuarioDto: <a href="../classes/UpdateUsuarioDto.html" target="_self">UpdateUsuarioDto</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/seguidores/seguidores.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/usuario/usuario.service.ts:70</a></div>
                 </td>
             </tr>
 
@@ -471,9 +550,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>updateSeguidoresDto</td>
+                                    <td>updateUsuarioDto</td>
                                     <td>
-                                                <code><a href="../classes/UpdateSeguidoresDto.html" target="_self" >UpdateSeguidoresDto</a></code>
+                                                <code><a href="../classes/UpdateUsuarioDto.html" target="_self" >UpdateUsuarioDto</a></code>
                                     </td>
 
                                     <td>
@@ -488,7 +567,78 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
+                        <b>Returns : </b>        <code><a href="../classes/Usuario.html" target="_self" >Promise&lt;Usuario&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateUser"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>validateUser</b></span>
+                        <a href="#validateUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateUser(payload: <a href="../interfaces/JwtPayload.html" target="_self">JwtPayload</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/usuario/usuario.service.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>payload</td>
+                                    <td>
+                                                <code><a href="../interfaces/JwtPayload.html" target="_self" >JwtPayload</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Usuario.html" target="_self" >Promise&lt;Usuario&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -504,41 +654,87 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
-import { CreateSeguidoresDto } from &#x27;./dto/create-seguidores.dto&#x27;;
-import { UpdateSeguidoresDto } from &#x27;./dto/update-seguidores.dto&#x27;;
-import { PrismaService } from &#x27;../prisma/prisma.service&#x27;;
-import { Seguidores } from &#x27;.prisma/client&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpException, HttpStatus, Injectable } from &#x27;@nestjs/common&#x27;;
+import { UpdateUsuarioDto } from &#x27;./dto/update-usuario.dto&#x27;;
+import {PrismaService } from &#x27;../prisma/prisma.service&#x27;;
+import { Usuario, Prisma } from &#x27;@prisma/client&#x27;;
+import * as bcrypt from &#x27;bcrypt&#x27;
+import { JwtPayload } from &#x27;src/auth/jwt.strategy&#x27;;
+import { LoginDto } from &#x27;src/auth/dto/login.dto&#x27;;
 
 @Injectable()
-export class SeguidoresService {
+export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async createPrisma(createSeguidoresDto: CreateSeguidoresDto): Promise&lt;Seguidores&gt; {
-    return await this.prisma.seguidores.create({ 
-      data: { ...createSeguidoresDto} 
+  //Criando validação de login e senha de acesso do usário
+
+  async createPrisma(data: Prisma.UsuarioCreateInput): Promise&lt;Usuario&gt; { //prometendo que vai trazer pra ele o que está na model do schema
+    data.senha &#x3D; await bcrypt.hash(data.senha, 10);
+    return await this.prisma.usuario.create({ data });
+  }
+
+  async findByLogin(login: LoginDto): Promise&lt;Usuario&gt; { 
+    const user &#x3D; await this.prisma.usuario.findFirst({ //comunicação com o banco que traz o usuario
+      where: { 
+        email: login.email, //vai trazer o primeiro email que bater com o email que o cara passou, por causa do findFirst
+      },
     });
+
+    if(!user) {
+      throw new HttpException(
+        &#x27;Usuário não encontrado&#x27;, HttpStatus.NOT_FOUND);
+    }
+  
+  
+    const senhaIgual &#x3D; await bcrypt.compare(login.senha, user.senha) //comparando a senha que foi passada, com a senha que temos no banco
+  
+    if(!senhaIgual){
+      throw new HttpException(&#x27;Invalid credentials&#x27;, HttpStatus.UNAUTHORIZED);
+    }
+  
+    return user; //se passou por todas as validações, então tá ok. Aí eu vou devolver esse usuário
   }
 
-  async findAllPrisma(): Promise&lt;Seguidores[]&gt; {
-    return await this.prisma.seguidores.findMany();
+  async validateUser(payload: JwtPayload): Promise&lt;Usuario&gt; {
+		const user &#x3D; await this.prisma.usuario.findFirst({
+			where: {
+				email: payload.email,
+			}
+		});
+    
+		if(!user){
+			throw new HttpException(&#x27;&#x27;, HttpStatus.UNAUTHORIZED);
+		}
+
+		return user;
+	}
+
+  //Retornando a lista de usuários
+  async findAllPrisma(): Promise&lt;Usuario[]&gt; {
+    return await this.prisma.usuario.findMany();
   }
 
-  async findOnePrisma(id: number): Promise&lt;Seguidores&gt; {
-    return await this.prisma.seguidores.findUnique({ 
+  //Retornando apenas um usuário, de acordo com o id passado
+  async findOnePrisma(id: number): Promise&lt;Usuario&gt; {
+    return await this.prisma.usuario.findUnique({
       where: { id },
     });
   }
 
-  async updateOnePrisma(id: number, updateSeguidoresDto: UpdateSeguidoresDto) {
-    return await this.prisma.seguidores.update({ 
-      data: { ...updateSeguidoresDto},
-      where: { id }, 
+  //Editando um usuário, de acordo com o id passado
+  async updateOnePrisma(
+    id: number, 
+    updateUsuarioDto: UpdateUsuarioDto,
+  ): Promise&lt;Usuario&gt; {
+    return await this.prisma.usuario.update({
+      data: { ...updateUsuarioDto},
+      where: { id },
     });
   }
 
+  //Deletando um usuário, de acordo com o id passado
   async removeOnePrisma(id: number) {
-    return await this.prisma.seguidores.delete({
+    return await this.prisma.usuario.delete({ 
       where: { id },
     });
   }
@@ -585,7 +781,7 @@ export class SeguidoresService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'SeguidoresService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsuarioService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
