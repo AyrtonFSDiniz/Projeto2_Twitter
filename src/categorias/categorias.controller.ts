@@ -10,26 +10,26 @@ export class CategoriasController {
 
   @Post()
   create(@Body() createCategoriaDto: CreateCategoriaDto) {
-    return this.categoriasService.create(createCategoriaDto);
+    return this.categoriasService.createPrisma(createCategoriaDto);
   }
 
   @Get()
   findAll() {
-    return this.categoriasService.findAll();
+    return this.categoriasService.findAllPrisma();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.categoriasService.findOne(+id);
+    return this.categoriasService.findOnePrisma(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCategoriaDto: UpdateCategoriaDto) {
-    return this.categoriasService.update(+id, updateCategoriaDto);
+    return this.categoriasService.updateOnePrisma(+id, updateCategoriaDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.categoriasService.remove(+id);
+    return this.categoriasService.removeOnePrisma(+id);
   }
 }
