@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsNotEmpty, IsString } from "class-validator";
 
 export class CreateUsuarioDto {
-
   @IsNotEmpty()
   @IsString()
   nome: string;
@@ -26,8 +25,4 @@ export class CreateUsuarioDto {
   @IsNotEmpty()
   @IsString()
   senha: string;
-
-  modificado_em: Date;
-
-  criado_em: Date;
 }

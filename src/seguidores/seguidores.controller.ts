@@ -7,16 +7,19 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { SeguidoresService } from './seguidores.service';
 import { CreateSeguidoresDto } from './dto/create-seguidores.dto';
 import { UpdateSeguidoresDto } from './dto/update-seguidores.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('seguidores')
 export class SeguidoresController {
   constructor(private readonly seguidoresService: SeguidoresService) {}
 
   @Post()
+  @UseGuards(AuthGuard('jwt'))
   create(@Body() createSeguidoresDto: CreateSeguidoresDto) {
     return this.seguidoresService.createPrisma(createSeguidoresDto);
   }

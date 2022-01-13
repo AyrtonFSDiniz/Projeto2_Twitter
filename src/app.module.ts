@@ -8,6 +8,8 @@ import { SeguidoresModule } from './seguidores/seguidores.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
+import { FavoritosOnUsuarioModule } from './favoritos-on-usuario/favoritos-on-usuario.module';
+import { CategoriasModule } from './categorias/categorias.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { AuthModule } from './auth/auth.module';
     PrismaModule,
     PrismaModule,
     UsuarioModule,
+    FavoritosOnUsuarioModule,
+    CategoriasModule,
   ],
   controllers: [AppController],
   providers: [AppService],
