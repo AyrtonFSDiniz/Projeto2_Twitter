@@ -1,96 +1,60 @@
-# API Tweeter #
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+</p>
 
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Introdução ##
+## Description
 
-Essa API tem a finalidade de salvar os dados tal qual a API do Twitter, ao qual teremos as rotas
-Seguidores, Seguindo, Tweet e Usuario, onde cada uma terá uma função tal como a plataforma
-de rede social.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+API desenvolvida usando typescript, framework NestJS. Foi criado um CRUD utilizando um banco de dados relacional, o postgres.
 
-## Instalando Dependências ##
+Como a API tem a ideia de um twitter, uma rede social com login e senha, para autenticação do usuário foi usado o JWT, com o envio de um token. 
 
-Para iniciar a aplicação, é necessário ter o NodeJS instalad na máquina.
-Se atentando a isso, basta ir no Prompt de Comando do Windows, dentro da pasta da API (faça antes
-o downloado do zip do projeto e descompacte em qualquer pasta de sua máquina) e inicie o comando
-abaixo:
+Também utilizamos o swagger para documentar as rotas.
 
-```bash
-$ npm install
+São 7 models: usuario, seguidor, seguindo, tweet, categoria, favoritosOnUsuario e categoriasOnTweet. A tabela de usuário tem relação (com a de seguidor, seguindo e tweet) de um para muitos, ou seja, um usuário pode escrever diversos tweets, ter vários seguidores e seguir muitas pessoas. Já a de categoriasOnTweet tem uma relação de muitos para muitos com a Tweet e Categoria. Já a de favoritosOnUsuario tem uma relação de muitos para muitos em relação à Usuario e à Tweet.
+
 ```
-Este código irá instalar todas as dependências necessárias para funcionar a aplicação.
 
-
-## Rodando a API ##
-
-Para rodar a API e utilizar de suas rotas, inicialize o comando abaixo:
+## Rodando o projeto
 
 ```bash
 # development
 $ npm run start
-```
 
-## Rotas ##
+# watch mode
+$ npm run start:dev
 
-Esta API tem 3 rotas. A seguir iremos tratar cada uma delas e como usá-las.
+## URL based
 
+https://localhost:3000
 
-### Rota Usuario ###
+## Swagger
 
-Nesta rota será tratado a autenticação do usuário e também os dados da pessoa. Nesta rota você
-poderá cadastrar um e-mail e senha para poder entrar na aplicação e também nome, imagem, bio e
-nascimento. Abaixo temos o modelo de cadastro.
-
-```bash
-{
-	"nome": "Joaozinho23,
-	"imagem": "https://www.drive.com.br",
-	"bio": "Só sei que nada sei",
-	"nascimento': "15/12/1998",
-	"email": "seuemail@email.com",
-	"senha": "senha123",
-}
-```
-
-Da mesma forma podemos atualizar e excluir os dados cadastrados, bastando acessar a rota
-"usuario" e alterando os dados e o tipo de rota.
-
-
-### Rota Tweet ###
-
-Nesta rota temos o corpo da mensagem proproamente dito, conforme modelo abaixo:
-
-```bash
-{
-	"texto": "Loren ypson",
-	"emoji": ":/",
-	"curtidas" "50",
-	"data_postagem": "01/01/22",
-}
-```
-
-### Rota Seguindo ###
-
-Rota contendo quem o usuário está seguindo na rede social.
-
-```bash
-{
-	"idSeguindo": "xpto"
-}
-```
-
-### Rota Seguidores ###
-
-Igual a rota anterior, só que mostrando quem está seguindo o usuário.
-
-```bash
-{
-	"idSeguidores": "xpto"
-}
-```
+https://localhost:3000/api
 
 ## Considerações Finais ##
 
 Este projeto teve o intuido de nos aprofundar mais no CRUD e também praticarmos as validações via JWT, com isso nos capacitando para criar APIs mais seguras e mais alinhadas
 com o que o mercado utiliza. Quaisquer dúvida ou sugestão de melhoria, fique a vontade de criar uma Issue aqui neste Github.
+
