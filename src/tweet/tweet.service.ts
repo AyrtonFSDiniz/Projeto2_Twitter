@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateTweetDto } from './dto/create-tweet.dto';
 import { UpdateTweetDto } from './dto/update-tweet.dto';
 import { PrismaService } from '../prisma/prisma.service';
-import { Tweet } from '@prisma/client';
+import { Prisma, Tweet } from '@prisma/client';
 
 @Injectable()
 export class TweetService {
@@ -11,7 +11,7 @@ export class TweetService {
 
   async createPrisma(createTweetDto: CreateTweetDto): Promise<Tweet> {
     return await this.prisma.tweet.create({
-      data: { ...createTweetDto}
+      data: { ... createTweetDto }
     });
   }
 

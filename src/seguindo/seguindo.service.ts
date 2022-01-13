@@ -11,7 +11,7 @@ export class SeguindoService {
 
   async createPrisma(createSeguindoDto: CreateSeguindoDto): Promise<Seguindo> {
     return await this.prisma.seguindo.create({
-      data: { ...createSeguindoDto },
+      data: { ... createSeguindoDto },
     });
   }
 

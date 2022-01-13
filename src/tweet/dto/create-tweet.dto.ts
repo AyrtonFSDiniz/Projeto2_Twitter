@@ -4,7 +4,7 @@ import { IsInt, IsNotEmpty, IsString } from "class-validator";
 export class CreateTweetDto {
   @IsNotEmpty()
   @IsInt()
-  usuarioid: number;
+  usuarioId: number;
 
   @IsNotEmpty()
   @IsString()
