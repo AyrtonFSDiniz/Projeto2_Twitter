@@ -54,7 +54,7 @@ nascimento. Abaixo temos o modelo de cadastro.
 	"nome": "Joaozinho23,
 	"imagem": "https://www.drive.com.br",
 	"bio": "Só sei que nada sei",
-	"nascimento': "15/12/1998",
+	"nascimento": "15/12/1998",
 	"email": "seuemail@email.com",
 	"senha": "senha123",
 }
