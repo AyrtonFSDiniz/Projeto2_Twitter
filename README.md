@@ -32,7 +32,7 @@ Como a API tem a ideia de um twitter, uma rede social com login e senha, para au
 
 Também utilizamos o swagger para documentar as rotas.
 
-São 4 tabelas: usuario, seguidor, seguindo e tweet. A tabela de usuário tem relação com as outras 3, de um para muitos, ou seja, um usuário pode escrever diversos tweets, ter vários seguidores e seguir muitas pessoas.
+São 7 models: usuario, seguidor, seguindo, tweet, categoria, favoritosOnUsuario e categoriasOnTweet. A tabela de usuário tem relação (com a de seguidor, seguindo e tweet) de um para muitos, ou seja, um usuário pode escrever diversos tweets, ter vários seguidores e seguir muitas pessoas. Já a de categoriasOnTweet tem uma relação de muitos para muitos com a Tweet e Categoria. Já a de favoritosOnUsuario tem uma relação de muitos para muitos em relação à Usuario e à Tweet.
 
 ```
 
